@@ -1,0 +1,45 @@
+body {
+    background-color: #f3f0ff;
+    line-height: 1.7;
+}
+
+.container-tos {
+    max-width: 960px;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container-tos h1, .container-tos h2, .container-tos h3 {
+    color: #4c1d95;
+}
+
+.container-tos h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.container-tos h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.container-tos p, .container-tos li {
+    font-size: 1rem;
+}
+
+.container-tos ul {
+    padding-left: 1.5rem;
+}
+
+.container-tos a {
+    color: #835aff;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.container-tos a:hover {
+    text-decoration: underline;
+}

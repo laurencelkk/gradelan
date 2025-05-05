@@ -1,0 +1,42 @@
+body {
+  background-color: #f9f6fc;
+  line-height: 1.6;
+}
+
+.container-privacy {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.container-privacy h1,
+.container-privacy h2,
+.container-privacy h3 {
+  color: #6d47a0;
+}
+
+.container-privacy h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.container-privacy h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+}
+
+.container-privacy p {
+  margin: 15px 0;
+}
+
+@media (max-width: 600px) {
+  .container-privacy h1 {
+    font-size: 2rem;
+  }
+  .container-privacy h2 {
+    font-size: 1.25rem;
+  }
+  .container-privacy {
+    padding: 20px 15px;
+  }
+}
