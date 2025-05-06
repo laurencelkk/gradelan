@@ -3,14 +3,16 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) : "" ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) : "GradÉlan" ?></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="<?= isset($stylecss) ? htmlspecialchars($stylecss) : "" ?>">
-    <script <?= isset($script) ? htmlspecialchars($script) : "" ?>></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script <?= isset($script) ? $script : "" ?>></script>
+    <script src="js/head.js"></script>
+    <script src="js/foot.js" defer></script>
     <script src="https://kit.fontawesome.com/cf66887dbc.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +27,11 @@
             </a>
 
             <div class="search-area">
-                <input type="text" placeholder="Search graduation products..." />
+                <form action="product.php" method="get" class="search-form">
+                    <input type="text" name="search" placeholder="Search graduation products..."
+                        value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>" />
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
 
             <div class="nav-right">
@@ -36,8 +42,9 @@
                     <a href="contact.php">Contact</a>
                     <a href="manageproduct.php">Manage Product</a>
                 </nav>
-                <div class="icons">
-                <a href="#"><i class="fas fa-shopping-cart icon"></i></a>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart icon"></i>
+                    <span class="cart-count" id="cartCount">0</span>
                 </div>
             </div>
         </div>

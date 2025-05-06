@@ -196,11 +196,11 @@ $stmt->close();
 <?php
 $pageTitle = "Manage Product - GradÉlan";
 $stylecss = "css/manageProduct.css";
-$script = 'script="js/manageProduct.js" defer';
+$script = 'src="js/manageProduct.js" defer';
 include 'head.php';
 ?>
 
-<div class="container">
+<div class="containers">
     <h1>Manage Products</h1>
 
     <?php if (!empty($successMsg)): ?>
@@ -408,6 +408,5 @@ include 'head.php';
         }
     }
 </script>
-</body>
 
-</html>
+<?php include 'foot.php'; ?>

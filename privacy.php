@@ -29,7 +29,7 @@ include 'head.php';
     <p>We do not sell or rent your information. We may share it with third-party service providers for order processing, payment gateways, and delivery services under strict confidentiality agreements.</p>
 
     <h2>5. Your Rights</h2>
-    <p>You have the right to access, update, or delete your personal information. To exercise these rights, please contact us at <a href="mailto:support@gradelan.com">support@gradelan.com</a>.</p>
+    <p>You have the right to access, update, or delete your personal information. To exercise these rights, please contact us at <a href="mailto:support@gradelan.laurencelkk.my">support@gradelan.laurencelkk.my</a>.</p>
 
     <h2>6. Cookies</h2>
     <p>Cookies help us personalize your shopping experience. You may disable cookies in your browser settings, but this may affect site functionality.</p>
@@ -37,7 +37,7 @@ include 'head.php';
     <h2>7. Changes to This Policy</h2>
     <p>We may update this policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
 
-    <p>If you have any questions or concerns, feel free to contact us at <a href="mailto:support@gradelan.com">support@gradelan.com</a>.</p>
+    <p>If you have any questions or concerns, feel free to contact us at <a href="mailto:support@gradelan.laurencelkk.my">support@gradelan.laurencelkk.my</a>.</p>
 </div>
 
 <?php include 'foot.php'; ?>

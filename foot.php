@@ -2,7 +2,7 @@
     <div class="container footer-content">
         <div class="footer-grid">
             <div class="footer-about">
-                <h3>GradÉlan</h3>
+                <a href="/"><h3>GradÉlan</h3></a>
                 <p>Celebrating academic achievements with premium graduation essentials since 2025.</p>
                 <div class="socials">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -32,14 +32,14 @@
             <div class="footer-newsletter">
                 <h4>Stay Connected</h4>
                 <p>Subscribe for exclusive offers and graduation tips</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address">
+                <form class="newsletter-form" method="post" enctype="application/x-www-form-urlencoded" novalidate autocomplete="off">
+                    <input type="email" placeholder="Your email address" id="newsMail" required>
                     <button type="submit" class="newsBtn"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 GradÉlan. All rights reserved.</p>
+            <p id="copy"></p>
             <div class="footer-legal">
                 <a href="privacy.php">Privacy Policy</a>
                 <a href="tos.php">Terms of Service</a>

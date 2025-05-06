@@ -27,10 +27,10 @@ include 'head.php';
     <p>Payments must be made in full at the time of purchase. We accept all major credit/debit cards and may use third-party payment processors to handle transactions securely.</p>
 
     <h2>5. Shipping</h2>
-    <p>Please review our <a href="shipping-policy.html">Shipping Policy</a> for detailed information on processing times, delivery, and fees.</p>
+    <p>Please review our <a href="shippolicy.php">Shipping Policy</a> for detailed information on processing times, delivery, and fees.</p>
 
     <h2>6. Returns and Exchanges</h2>
-    <p>We accept returns and exchanges under certain conditions. Please refer to our <a href="refunds-policy.html">Refunds and Exchanges Policy</a> for more details.</p>
+    <p>We accept returns and exchanges under certain conditions. Please refer to our <a href="rne.php">Refunds and Exchanges Policy</a> for more details.</p>
 
     <h2>7. Intellectual Property</h2>
     <p>All content on this website, including logos, product images, and written material, is the property of GradÉlan and may not be reproduced without permission.</p>
@@ -45,7 +45,7 @@ include 'head.php';
     <p>We may update these Terms from time to time. Continued use of our site after changes constitutes your acceptance of the new Terms.</p>
 
     <h2>11. Contact Us</h2>
-    <p>If you have any questions about these Terms, please email us at <a href="mailto:support@gradelan.com">support@gradelan.com</a>.</p>
+    <p>If you have any questions about these Terms, please email us at <a href="mailto:support@gradelan.laurencelkk.my">support@gradelan.laurencelkk.my</a>.</p>
 </div>
 
 <?php include 'foot.php'; ?>

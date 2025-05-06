@@ -22,7 +22,7 @@ include 'head.php';
     <p>We currently ship across Malaysia via trusted courier partners. Tracking numbers will be provided once the package is dispatched.</p>
 
     <h2>International Shipping</h2>
-    <p>At this time, we do not offer international shipping. Please contact <a href="mailto:support@gradelan.com">support@gradelan.com</a> for special inquiries.</p>
+    <p>At this time, we do not offer international shipping. Please contact <a href="mailto:support@gradelan.laurencelkk.my">support@gradelan.laurencelkk.my</a> for special inquiries.</p>
 
     <h2>Delays & Exceptions</h2>
     <p>GradÉlan is not responsible for delays caused by couriers or natural events. We will do our best to notify customers of any known disruptions.</p>

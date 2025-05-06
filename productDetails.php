@@ -31,26 +31,20 @@ while ($row = $relatedResult->fetch_assoc()) {
 $relatedStmt->close();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$pageTitle = "Product Details - " . htmlspecialchars($product['prodName']);
+$stylecss = "css/productDetails.css";
+$script = "src='js/productDetails.js'";
+include 'head.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($product['prodName']); ?></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="product.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="product.js"></script>
-</head>
-
-<body>
+<div class="productCard" data-id="<?= htmlspecialchars($product['prodID']); ?>">
     <div class="productDetailContainer">
         <div class="productDetailGrid">
             <div class="productGallery">
                 <div class="mainImage">
-                    <img src="img/products/<?= htmlspecialchars($product['prodImg']); ?>"
-                         alt="<?= htmlspecialchars($product['prodName']); ?>">
+                    <img class="productImg" src="img/products/<?= htmlspecialchars($product['prodImg']); ?>"
+                        alt="<?= htmlspecialchars($product['prodName']); ?>">
                 </div>
             </div>
 
@@ -74,17 +68,37 @@ $relatedStmt->close();
                         <button class="quantityBtn plus"><i class="fas fa-plus"></i></button>
                     </div>
 
-                    <button class="addToCartBtn" data-id="<?= $product['prodID']; ?>">
+                    <button class="addToCartBtn">
                         <i class="fas fa-shopping-cart"></i> Add to Cart
                     </button>
 
-                    <button class="buyNowBtn" data-id="<?= $product['prodID']; ?>">
+                    <button class="buyNowBtn">
                         <i class="fas fa-bolt"></i> Buy Now
                     </button>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>
 
-</html>
+<!-- Related Products Section -->
+<section class="relatedProducts">
+    <h2>You May Also Like</h2>
+    <div class="relatedGrid">
+        <?php foreach ($relatedProducts as $related): ?>
+            <div class="productCard">
+                <a href="productDetails.php?prodID=<?= htmlspecialchars($related['prodID']); ?>">
+                    <div class="productImage">
+                        <img src="img/products/<?= htmlspecialchars($related['prodImg']); ?>"
+                            alt="<?= htmlspecialchars($related['prodName']); ?>">
+                    </div>
+                    <h3><?= htmlspecialchars($related['prodName']); ?></h3>
+                    <p class="productPrice">RM<?= number_format($related['prodPrice'], 2); ?></p>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+
+<?php include 'foot.php'; ?>

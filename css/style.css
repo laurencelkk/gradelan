@@ -12,6 +12,7 @@ html {
 
 body {
   color: #333;
+  background-color: #f9f5ff;
 }
 
 /* Header Styles */
@@ -21,7 +22,8 @@ header {
   padding: 15px 0;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 90;
+  transition: all 0.3s ease;
 }
 
 .container {
@@ -36,6 +38,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
 .logo-area {
@@ -43,38 +46,71 @@ header {
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .logo {
   height: 40px;
   width: auto;
+  transition: all 0.3s ease;
 }
 
 .logo-area h1 {
   color: #8a4fff;
   font-size: 1.5rem;
   font-weight: 600;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.logo-area:hover {
+  transform: translateY(-2px);
+}
+
+.search-area {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
+}
+
+.search-form {
+  display: flex;
+  position: relative;
+  width: 100%;
 }
 
 .search-area input {
-  padding: 10px 15px;
-  border: 1px solid #e6d9ff;
-  border-radius: 25px;
+  padding: 12px 20px;
+  border: 1px solid #f0e9ff;
+  border-radius: 30px;
   width: 100%;
-  max-width: 300px;
   outline: none;
   transition: all 0.3s ease;
+  font-size: 0.95rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .search-area input:focus {
   border-color: #b18aff;
-  box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.2);
+}
+
+.search-area button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #8a4fff;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 nav {
@@ -88,6 +124,8 @@ nav a {
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
+  font-size: 0.95rem;
+  padding: 5px 0;
 }
 
 nav a:hover {
@@ -97,7 +135,7 @@ nav a:hover {
 nav a::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
@@ -111,58 +149,114 @@ nav a:hover::after {
 
 .icons {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  align-items: center;
 }
 
 .icon {
-  width: 22px;
-  height: 22px;
+  color: #666;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
 }
 
 .icon:hover {
-  opacity: 0.8;
+  color: #8a4fff;
   transform: translateY(-2px);
 }
 
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #8a4fff;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Active link styling */
+nav a.active {
+  color: #8a4fff;
+  font-weight: 600;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
 /* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .nav-container {
+      gap: 10px;
+  }
+  
+  .search-area {
+      order: 3;
+      width: 100%;
+      margin: 10px 0;
+  }
+  
+  .nav-right {
+      gap: 15px;
+  }
+  
+  nav {
+      gap: 15px;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-container {
-    flex-direction: column;
-    gap: 15px;
+      flex-direction: column;
+      align-items: stretch;
   }
-
-  .search-area {
-    order: 3;
-    width: 100%;
+  
+  .logo-area {
+      justify-content: center;
   }
-
-  .search-area input {
-    max-width: 100%;
-  }
-
+  
   .nav-right {
-    width: 100%;
-    justify-content: space-between;
+      justify-content: center;
+      flex-wrap: wrap;
   }
-
+  
   nav {
-    gap: 15px;
+      justify-content: center;
+  }
+  
+  .icons {
+      margin-left: auto;
   }
 }
 
 @media (max-width: 480px) {
   .logo-area h1 {
-    font-size: 1.2rem;
+      font-size: 1.3rem;
   }
-
+  
   nav {
-    gap: 10px;
-    font-size: 0.9rem;
+      gap: 10px;
+      font-size: 0.9rem;
   }
-
+  
   .icons {
-    gap: 10px;
+      gap: 15px;
+  }
+  
+  .search-area input {
+      padding: 10px 15px;
   }
 }
 
@@ -184,6 +278,10 @@ footer {
   color: white;
   font-size: 1.5rem;
   margin-bottom: 20px;
+}
+
+.footer-about a {
+  text-decoration: none;
 }
 
 .footer-about p {
@@ -210,7 +308,7 @@ footer {
 }
 
 .socials a:hover {
-  background: var(--primary-color);
+  background: #8a4fff;
   transform: translateY(-3px);
 }
 

@@ -1,11 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Optimized CSS for GradÉlan - Graduation Essentials */
 body {
-  font-family: "Poppins", sans-serif;
   color: #4a4a68;
   background-color: #fff;
   line-height: 1.6;
@@ -19,28 +13,17 @@ body {
 }
 
 /* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5 {
   font-weight: 600;
   line-height: 1.2;
   color: #2d2d42;
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
 
 p {
   color: #7a7a9d;
@@ -53,16 +36,10 @@ p {
   border-radius: 50px;
   font-weight: 500;
   text-align: center;
-  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 .btn-primary {
@@ -74,37 +51,6 @@ p {
   background-color: #6b3dcc;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(138, 79, 255, 0.3);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(138, 79, 255, 0.3);
-}
-
-.btn-primary:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.4);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: #8a4fff;
-  border: 2px solid #8a4fff;
-}
-
-.btn-secondary:hover {
-  background-color: #8a4fff;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.btn-secondary:active {
-  transform: translateY(0);
-}
-
-.btn-secondary:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.4);
 }
 
 .btn-link {
@@ -121,27 +67,7 @@ p {
 }
 
 .btn-link:hover {
-  color: #6b3dcc;
   text-decoration: underline;
-}
-
-.btn-link:focus {
-  outline: none;
-  text-decoration: underline;
-}
-
-/* Product action buttons */
-.btn-wishlist,
-.btn-quickview,
-.btn-cart {
-  transition: all 0.3s ease;
-}
-
-.btn-wishlist:focus,
-.btn-quickview:focus,
-.btn-cart:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.4);
 }
 
 /* Hero Section */
@@ -150,12 +76,7 @@ p {
   height: 80vh;
   min-height: 660px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    linear-gradient(
-      135deg,
-      rgba(138, 79, 255, 0.1) 0%,
-      rgba(107, 61, 204, 0.2) 100%
-    ),
-    url("../img/hero-bg.png") center 80% / cover no-repeat;
+              url("../img/hero-bg.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   color: white;
@@ -169,17 +90,11 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(45, 45, 66, 0.7) 0%,
-    rgba(45, 45, 66, 0.3) 100%
-  );
-  z-index: 1;
+  background: linear-gradient(to right, rgba(45, 45, 66, 0.7) 0%, rgba(45, 45, 66, 0.3) 100%);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -219,34 +134,20 @@ p {
 }
 
 @keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-15px);
-  }
-  60% {
-    transform: translateY(-7px);
-  }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-15px); }
+  60% { transform: translateY(-7px); }
 }
 
 /* Section Styling */
 .section-header {
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin: 40px 0;
 }
 
 .section-header h2 {
   margin-bottom: 15px;
   position: relative;
-  display: inline-block;
 }
 
 .section-header h2::after {
@@ -262,13 +163,7 @@ p {
 
 .section-header p {
   max-width: 700px;
-  margin: 0 auto;
-}
-
-.section-header button {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
+  margin: 0 auto 20px;
 }
 
 /* Product Card */
@@ -302,11 +197,12 @@ p {
 .product-image {
   position: relative;
   overflow: hidden;
+  height: 300px;
 }
 
 .product-image img {
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -315,43 +211,51 @@ p {
   transform: scale(1.05);
 }
 
-.product-actions {
+/* Enhanced Quick View */
+.quick-view-overlay {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(138, 79, 255, 0.9);
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.product-card:hover .product-actions {
+.product-card:hover .quick-view-overlay {
   opacity: 1;
 }
 
-.btn-wishlist,
 .btn-quickview {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  padding: 12px 24px;
   background: white;
-  color: #4a4a68;
+  color: #8a4fff;
   border: none;
+  border-radius: 50px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.btn-wishlist:hover,
 .btn-quickview:hover {
-  background: #8a4fff;
-  color: white;
+  background: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+.btn-quickview i {
+  font-size: 1.1rem;
+}
+
+/* Product Details */
 .product-details {
   padding: 20px;
 }
@@ -362,10 +266,8 @@ p {
 }
 
 .product-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .price {
@@ -374,21 +276,9 @@ p {
   font-size: 1.1rem;
 }
 
-.product-rating {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #f44336;
-  font-size: 0.85rem;
-}
-
-.product-rating span {
-  color: #7a7a9d;
-}
-
 .btn-cart {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #8a4fff;
   color: white;
   border: none;
@@ -406,18 +296,23 @@ p {
   background-color: #6b3dcc;
 }
 
+/* Add this for the success state */
+.btn-cart.success {
+  background-color: #4CAF50;
+}
+
 /* Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 /* Value Proposition */
 .value-prop {
   padding: 80px 0;
-  background-color: #f9f9ff;
+  background-color: #f0f0fb;
 }
 
 .value-grid {
@@ -439,16 +334,9 @@ p {
   display: block;
 }
 
-.value-content h2 {
-  margin-bottom: 20px;
-}
-
-.value-content p {
-  margin-bottom: 25px;
-}
-
 .value-list {
   list-style: none;
+  margin-top: 20px;
 }
 
 .value-list li {
@@ -466,11 +354,7 @@ p {
 /* Trust Section */
 .trust-section {
   padding: 80px 0;
-  background: linear-gradient(
-    135deg,
-    rgba(138, 79, 255, 0.03) 0%,
-    rgba(107, 61, 204, 0.08) 100%
-  );
+  background: linear-gradient(135deg, rgba(138, 79, 255, 0.03) 0%, rgba(107, 61, 204, 0.08) 100%);
 }
 
 .trust-grid {
@@ -495,11 +379,7 @@ p {
 .trust-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(
-    135deg,
-    rgba(138, 79, 255, 0.1) 0%,
-    rgba(107, 61, 204, 0.2) 100%
-  );
+  background: linear-gradient(135deg, rgba(138, 79, 255, 0.1) 0%, rgba(107, 61, 204, 0.2) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -509,14 +389,9 @@ p {
   font-size: 1.5rem;
 }
 
-.trust-item h4 {
-  margin-bottom: 15px;
-}
-
 /* Testimonials */
 .testimonials {
   padding: 80px 0;
-  background-color: white;
 }
 
 .testimonial-grid {
@@ -529,7 +404,6 @@ p {
   background: #f9f9ff;
   padding: 30px;
   border-radius: 12px;
-  position: relative;
 }
 
 .testimonial-content {
@@ -550,18 +424,10 @@ p {
   line-height: 1;
 }
 
-.testimonial-content p {
-  padding-top: 10px;
-}
-
 .testimonial-author {
   display: flex;
   align-items: center;
   gap: 15px;
-}
-
-.testimonial-author h5 {
-  margin-bottom: 5px;
 }
 
 .testimonial-author span {
@@ -586,4 +452,21 @@ p {
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
   margin: 0 auto 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero {
+    height: auto;
+    min-height: 500px;
+    padding: 100px 0;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 }

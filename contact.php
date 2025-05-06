@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Contact Us - GradÉlan";
 $stylecss = "css/contact.css";
+$script = "src='js/contact.js'";
 include 'head.php';
 ?>
 
@@ -17,18 +18,18 @@ include 'head.php';
       <div class="contact-form">
         <h2>Send Us a Message</h2>
         <p>Have questions about our products or need assistance with your order? Fill out the form below and we'll get back to you within 24 hours.</p>
-        
-        <form class="gradelan-form">
+
+        <form class="gradelan-form" method="post" enctype="application/x-www-form-urlencoded" novalidate autocomplete="off">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
           </div>
-          
+
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
           </div>
-          
+
           <div class="form-group">
             <label for="subject">Subject</label>
             <select id="subject" name="subject">
@@ -40,25 +41,25 @@ include 'head.php';
               <option value="other">Other Question</option>
             </select>
           </div>
-          
+
           <div class="form-group">
             <label for="message">Your Message</label>
             <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
           </div>
-          
+
           <button type="submit" class="btn-primary">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
         </form>
       </div>
-      
+
       <div class="contact-info">
         <div class="info-card">
           <h3>Contact Information</h3>
           <p>Reach out to us through any of these channels:</p>
-          
+
           <div class="contact-method">
-          <i class="fas fa-regular fa-clock"></i>
+            <i class="fas fa-regular fa-clock"></i>
             <div>
               <h4>Operation Hours</h4>
               <p>Monday - Friday: 9 AM - 6 PM (UTC +8)</p>
@@ -74,23 +75,27 @@ include 'head.php';
               </a>
             </div>
           </div>
-          
+
           <div class="contact-method">
             <i class="fas fa-phone-alt"></i>
             <div>
               <h4>Phone</h4>
-              <a href="tel:+60182724715"><p>+6018-272 4715</p></a>
+              <a href="tel:+60182724715">
+                <p>+6018-272 4715</p>
+              </a>
             </div>
           </div>
-          
+
           <div class="contact-method">
             <i class="fas fa-envelope"></i>
             <div>
               <h4>Email</h4>
-              <a href="mailto:support@gradelen.com"><p>support@gradelan.com</p></a>
+              <a href="mailto:support@gradelen.com">
+                <p>support@gradelan.laurencelkk.my</p>
+              </a>
             </div>
           </div>
-          
+
           <div class="social-links">
             <h4>Follow Us</h4>
             <div class="social-icons">
@@ -103,13 +108,13 @@ include 'head.php';
         </div>
       </div>
     </div>
-    
+
     <div class="map-section">
       <h2>Visit Our Showroom</h2>
       <p>Schedule an appointment to see our graduation products in person</p>
       <div class="map-container">
         <!-- Embedded Google Map -->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d967.3437755569365!2d100.28429133675424!3d5.453156323123965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac2c0305a5483%3A0xfeb1c7560c785259!2sTAR%20UMT%20Penang%20Branch!5e0!3m2!1sen!2smy!4v1746398226002!5m2!1sen!2smy" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d967.3437755569365!2d100.28429133675424!3d5.453156323123965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac2c0305a5483%3A0xfeb1c7560c785259!2sTAR%20UMT%20Penang%20Branch!5e0!3m2!1sen!2smy!4v1746398226002!5m2!1sen!2smy" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>

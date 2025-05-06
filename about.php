@@ -48,19 +48,19 @@ include 'head.php';
     <h2 class="section-title">Meet Our Leadership</h2>
     <div class="team-members">
       <div class="team-member">
-        <img src="img/laurence.png" alt="Laurence Loo Ka Keong">
-        <h4>Laurence Loo Ka Keong</h4>
+        <img src="img/laurencelkk.png" alt="Laurence Loo Ka Keong">
+        <h4>Ts. Laurence Loo Ka Keong</h4>
         <p>Founder & CEO</p>
       </div>
 
       <div class="team-member">
-        <img src="img/team2.png" alt="Goh Jian Xin">
+        <img src="img/gohjx.png" alt="Goh Jian Xin">
         <h4>Goh Jian Xin</h4>
         <p>Co-Founder & CTO</p>
       </div>
 
       <div class="team-member">
-        <img src="img/team3.png" alt="Lee Kai Quan">
+        <img src="img/leekq.png" alt="Lee Kai Quan">
         <h4>Lee Kai Quan</h4>
         <p>Co-Founder & COO</p>
       </div>
