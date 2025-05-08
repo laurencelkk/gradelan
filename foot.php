@@ -17,7 +17,6 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="product.php">Products</a></li>
                     <li><a href="about.php">About</a></li>
-                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="manageProduct.php">Manage Product</a></li>
                 </ul>
             </div>
@@ -33,7 +32,7 @@
                 <h4>Stay Connected</h4>
                 <p>Subscribe for exclusive offers and graduation tips</p>
                 <form class="newsletter-form" method="post" enctype="application/x-www-form-urlencoded" novalidate autocomplete="off">
-                    <input type="email" placeholder="Your email address" id="newsMail" required>
+                    <input type="email" placeholder="Your email address" id="newsMail" name="newsMail" required>
                     <button type="submit" class="newsBtn"><i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>

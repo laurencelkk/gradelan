@@ -2,6 +2,30 @@ body {
   background-color: #f7f4fb;
 }
 
+/* Free Shipping Banner */
+.free-shipping-banner {
+  background-color: #f0e6ff; /* Light purple background */
+  color: #6b2dff; /* Dark purple text */
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #d9c7ff;
+}
+
+.free-shipping-banner i {
+  font-size: 1.5rem;
+  color: #8a4fff; /* Primary purple */
+}
+
+.free-shipping-banner span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
 .container-shipping {
   max-width: 900px;
   margin: auto;
@@ -31,8 +55,40 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.container-shipping ul li strong {
+  color: #8a4fff;
+}
+
+.container-shipping a {
+  color: #835aff;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.container-shipping a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
+  .free-shipping-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .free-shipping-banner i {
+    margin-bottom: 5px;
+  }
+
   .container-shipping {
-    padding: 2rem 1.2rem;
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
   }
 }

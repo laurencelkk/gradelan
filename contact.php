@@ -3,6 +3,67 @@ $pageTitle = "Contact Us - GradÉlan";
 $stylecss = "css/contact.css";
 $script = "src='js/contact.js'";
 include 'head.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name'])) {
+  // Collect and sanitize form input
+  $name = htmlspecialchars(trim($_POST['name']), ENT_QUOTES, 'UTF-8');
+  $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+  $subject = htmlspecialchars(trim($_POST['subject']), ENT_QUOTES, 'UTF-8');
+  $message = htmlspecialchars(trim($_POST['message']), ENT_QUOTES, 'UTF-8');  
+
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  } else {
+    // Send email using PHPMailer
+    $mail = new PHPMailer(true);
+
+    if ($subject === "product") {
+      $subject = "Product Inquiry";
+    } elseif ($subject === "order") {
+      $subject = "Order Status Inquiry";
+    } elseif ($subject === "custom") {
+      $subject = "Custom Order Request";
+    } elseif ($subject === "wholesale") {
+      $subject = "Wholesale Inquiry";
+    } elseif ($subject === "other") {
+      $subject = "Other Question";
+    } else {
+      $subject = "General Inquiry";
+    }
+
+    try {
+      // SMTP Configuration
+      $mail->isSMTP();
+      $mail->Host       = 'smtp.gmail.com'; 
+      $mail->SMTPAuth   = true;
+      $mail->Username   = 'csstarumtpg@gmail.com';  
+      $mail->Password   = 'khebbtdvzgbzpacq';   
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+      $mail->Port       = 587;
+
+      // Sender and recipient
+      $mail->setFrom('support@gradelan.laurencelkk.my', 'GradElan');
+      $mail->addAddress('laurencelkk-pm23@student.tarc.edu.my', 'GradElan CEO'); 
+
+      // Email content
+      $mail->isHTML(true);
+      $mail->Subject = 'Contact Us Form Submission: ' . $subject;
+      $mail->Body    = "<p><strong>Name:</strong> $name</p>
+                              <p><strong>Email:</strong> $email</p>
+                              <p><strong>Subject:</strong> $subject</p>
+                              <p><strong>Message:</strong><br>$message</p>";
+      // Send the email
+      $mail->send();
+      redirect('contact.php?success');
+    } catch (Exception $e) {
+      echo "<script>console.log('Mail Error: " . addslashes($mail->ErrorInfo) . "');</script>";
+    }
+  }
+}
 ?>
 
 <section class="contact-hero">

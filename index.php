@@ -2,7 +2,6 @@
 $pageTitle = "GradÉlan - Graduation Essentials";
 $stylecss = "css/index.css";
 include 'head.php';
-include 'base.php';
 
 $query = "SELECT * FROM products ORDER BY createdAt DESC LIMIT 3";
 $result = mysqli_query($conn, $query);
@@ -30,14 +29,14 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <div class="section-header" id="featured-products-header">
     <h2>Featured Graduation Essentials</h2>
     <p>Curated collection for your special day</p>
-    <button onclick="location.href='products.php'" class="btn-link">View All Products <i class="fas fa-arrow-right"></i></button>
+    <button onclick="location.href='product.php'" class="btn-link">View All Products <i class="fas fa-arrow-right"></i></button>
   </div>
   <div class="product-grid">
     <?php foreach ($products as $product): ?>
-      <div class="product-card">
+      <div class="product-card productCard" data-id="<?= $product['prodID'] ?>">
         <div class="product-badge">NEW</div>
         <div class="product-image">
-          <img src="img/products/<?php echo htmlspecialchars($product['prodImg']); ?>" alt="<?php echo htmlspecialchars($product['prodName']); ?>">
+          <img src="img/products/<?php echo htmlspecialchars($product['prodImg']); ?>" alt="<?php echo htmlspecialchars($product['prodName']); ?>" class="productImg" />
           <div class="quick-view-overlay">
             <button class="btn-quickview" onclick="location.href='productDetails.php?prodID=<?php echo $product['prodID']; ?>'">
               <i class="fas fa-eye"></i> Quick View
@@ -49,7 +48,9 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <div class="product-meta">
             <span class="price">RM<?php echo number_format($product['prodPrice'], 2); ?></span>
           </div>
-          <button class="btn-cart"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+          <button class="btn-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+          <button class="buyNowBtn"><i class="fas fa-bolt"></i> Buy Now
+          </button>
         </div>
       </div>
     <?php endforeach; ?>
@@ -157,7 +158,7 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <div class="cta-content">
       <h2>Ready for Your Big Day?</h2>
       <p>Shop our collection today and receive 10% off your first order</p>
-      <button onclick="location.href='products.html'" class="btn-primary btn">Shop Now</button>
+      <button onclick="location.href='product.php'" class="btn-primary btn">Shop Now</button>
     </div>
   </div>
 </section>

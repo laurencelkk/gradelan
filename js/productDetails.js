@@ -35,31 +35,6 @@ $(document).ready(function () {
     updateCartCount();
   });
 
-  // Buy now functionality
-  $(".buyNowBtn").click(function () {
-    const productCard = $(this).closest(".productCard");
-    const productId = productCard.data("id");
-    const productName = productCard.find("h1, h3").first().text();
-    const productPrice = parseFloat(
-      productCard.find(".price").text().replace("RM", "")
-    );
-    const productImage = productCard.find(".productImg").attr("src");
-    const quantity = parseInt(productCard.find(".quantityInput").val()) || 1;
-
-    const cart = [
-      {
-        id: productId,
-        name: productName,
-        price: productPrice,
-        image: productImage,
-        quantity: quantity,
-      },
-    ];
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    window.location.href = "checkout.php";
-  });
-
   // Quantity increase/decrease buttons
   $(".quantityBtn.plus").click(function () {
     let input = $(this).siblings(".quantityInput");

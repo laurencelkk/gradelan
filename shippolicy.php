@@ -8,13 +8,18 @@ include 'head.php';
     <h1>Shipping Policy</h1>
     <p>At GradÉlan, we aim to deliver your graduation products safely and promptly. Below is a detailed outline of our shipping practices.</p>
 
+    <div class="free-shipping-banner">
+        <i class="fas fa-shipping-fast"></i>
+        <span>FREE Standard Shipping for all orders over RM250!</span>
+    </div>
+
     <h2>Processing Time</h2>
     <p>Orders are processed within 2–5 business days. Custom items like robes or sashes may require up to 7 business days to process.</p>
 
     <h2>Shipping Methods & Rates</h2>
     <ul>
         <li><strong>Standard Shipping:</strong> 3–7 business days (flat rate)</li>
-        <li><strong>Express Shipping:</strong> 1–3 business days (rate calculated at checkout)</li>
+        <li><strong>Free Shipping:</strong> Automatically applied for orders over RM250</li>
         <li>Shipping costs are displayed during checkout before final payment.</li>
     </ul>
 

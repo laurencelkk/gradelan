@@ -301,6 +301,29 @@ p {
   background-color: #4CAF50;
 }
 
+.buyNowBtn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.buyNowBtn {
+  background-color: #4bb543;
+  color: white;
+  border: 0;
+  margin-top: 10px;
+}
+
+.buyNowBtn:hover {
+  background-color: #3a9a32;
+}
+
 /* Product Grid */
 .product-grid {
   display: grid;

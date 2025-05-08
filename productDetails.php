@@ -1,5 +1,8 @@
 <?php
-include 'base.php';
+$pageTitle = "Product Details - " . htmlspecialchars($product['prodName']);
+$stylecss = "css/productDetails.css";
+$script = "src='js/productDetails.js'";
+include 'head.php';
 
 $prodID = $_GET['prodID'] ?? null;
 
@@ -29,13 +32,6 @@ while ($row = $relatedResult->fetch_assoc()) {
     $relatedProducts[] = $row;
 }
 $relatedStmt->close();
-?>
-
-<?php
-$pageTitle = "Product Details - " . htmlspecialchars($product['prodName']);
-$stylecss = "css/productDetails.css";
-$script = "src='js/productDetails.js'";
-include 'head.php';
 ?>
 
 <div class="productCard" data-id="<?= htmlspecialchars($product['prodID']); ?>">

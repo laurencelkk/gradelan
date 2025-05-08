@@ -1,5 +1,8 @@
 <?php
-include 'base.php';
+$pageTitle = "Manage Product - GradÉlan";
+$stylecss = "css/manageProduct.css";
+$script = 'src="js/manageProduct.js" defer';
+include 'head.php';
 
 define('UPLOAD_DIR', 'img/products/');
 
@@ -193,13 +196,6 @@ $products = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 ?>
 
-<?php
-$pageTitle = "Manage Product - GradÉlan";
-$stylecss = "css/manageProduct.css";
-$script = 'src="js/manageProduct.js" defer';
-include 'head.php';
-?>
-
 <div class="containers">
     <h1>Manage Products</h1>
 
@@ -347,40 +343,6 @@ include 'head.php';
 </div>
 
 <script>
-    const products = <?= json_encode($products); ?>;
-    const currentPage = <?= $page ?>;
-    const currentSearch = "<?= addslashes($search) ?>";
-    const currentSort = "<?= $sort ?>";
-
-    // Close alert messages
-    document.querySelectorAll('.close-alert').forEach(button => {
-        button.addEventListener('click', () => {
-            button.parentElement.style.display = 'none';
-        });
-    });
-
-    // Search functionality
-    document.getElementById('searchBtn').addEventListener('click', () => {
-        const search = document.getElementById('searchInput').value;
-        const sort = document.getElementById('sortSelect').value;
-        window.location.href = `?search=${encodeURIComponent(search)}&sort=${sort}`;
-    });
-
-    // Sort functionality
-    document.getElementById('sortSelect').addEventListener('change', () => {
-        const search = document.getElementById('searchInput').value;
-        const sort = document.getElementById('sortSelect').value;
-        window.location.href = `?search=${encodeURIComponent(search)}&sort=${sort}`;
-    });
-
-    // Press Enter in search input
-    document.getElementById('searchInput').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            document.getElementById('searchBtn').click();
-        }
-    });
-
-    // Edit product
     let isEditing = false;
 
     function editProduct(prodID) {

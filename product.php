@@ -1,5 +1,8 @@
 <?php
-include 'base.php';
+$pageTitle = "Products | GradÉlan";
+$stylecss = "css/product.css";
+$script = "src=js/product.js";
+include 'head.php'; 
 
 // Pagination
 $limit = 8;
@@ -67,13 +70,6 @@ $countResult = $countStmt->get_result();
 $totalProducts = $countResult->fetch_assoc()['total'] ?? 0;
 $totalPages = ceil($totalProducts / $limit);
 $countStmt->close();
-?>
-
-<?php 
-$pageTitle = "Products | GradÉlan";
-$stylecss = "css/product.css";
-$script = "src=js/product.js";
-include 'head.php'; 
 ?>
 
 <body>

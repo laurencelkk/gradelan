@@ -1,3 +1,27 @@
+//login
+document.addEventListener("DOMContentLoaded", function () {
+    const inMail = prompt("Enter email:");
+    const inPwd = prompt("Enter password:");
+  
+    if (inMail === "laurencelkk@gradelan.laurencelkk.my" && inPwd === "laurencelkk123") {
+      alert("Login successful!");
+    } else if (inMail === "gohjx@gradelan.laurencelkk.my" && inPwd === "gohjx123") {
+      alert("Login successful!");
+    } else if (inMail === "leekq@gradelan.laurencelkk.my" && inPwd === "leekq123") {
+      alert("Login successful!");
+    } else {
+      alert("Invalid credentials. Access denied.");
+      window.location.href = "index.php";
+    }
+});
+
+$('#searchForm').on('submit', function(e) {
+    e.preventDefault();
+    const search = $(this).find('input[name="search"]').val();
+    const sort = $('#sortSelect').val();
+    window.location.href = `product.php?search=${encodeURIComponent(search)}&sort=${sort}`;
+});
+
 // Modal Functions
 function openModal() {
     $("#modalTitle").text("Add New Product");
@@ -171,7 +195,7 @@ $("form").submit(function (e) {
 // Initialize the page
 $(document).ready(function() {
     // Set up event listeners for search and filter
-    $('#searchBtn').click(function() {
+    $('#searchBtns').click(function() {
         const search = $('#searchInput').val();
         const sort = $('#sortSelect').val();
         window.location.href = `?search=${encodeURIComponent(search)}&sort=${sort}`;
@@ -185,7 +209,7 @@ $(document).ready(function() {
 
     $('#searchInput').keypress(function(e) {
         if (e.which === 13) { // Enter key
-            $('#searchBtn').click();
+            $('#searchBtns').click();
         }
     });
 

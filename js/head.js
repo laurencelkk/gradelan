@@ -42,15 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("cart", JSON.stringify(cart));
       updateCartCount();
 
-      // Show added to cart feedback
-      const originalText = this.innerHTML;
-      this.innerHTML = '<i class="fas fa-check"></i> Added!';
-      this.style.backgroundColor = "#4CAF50";
-
-      setTimeout(() => {
-        this.innerHTML = originalText;
-        this.style.backgroundColor = "#8a4fff";
-      }, 1500);
+      alert(`${productName} (x1) has been added to your cart!`);
     });
   });
 
@@ -62,4 +54,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize cart count
   updateCartCount();
+
+  // Buy now functionality
+  $(".buyNowBtn").click(function () {
+    const productCard = $(this).closest(".productCard");
+    const productId = productCard.data("id");
+    const productName = productCard.find("h3").text();
+    const productPrice = parseFloat(
+      productCard.find(".price").text().replace("RM", "")
+    );
+    const productImage = productCard.find(".productImg").attr("src");
+
+    // Create a cart with just this item
+    const cart = [
+      {
+        id: productId,
+        name: productName,
+        price: productPrice,
+        image: productImage,
+        quantity: 1,
+      },
+    ];
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.location.href = "checkout.php";
+  });
 });

@@ -1,0 +1,335 @@
+:root {
+  --primary-color: #8a4fff;
+  --primary-light: #b18aff;
+  --primary-lighter: #e0d0ff;
+  --primary-dark: #6b2dff;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #777;
+  --white: #ffffff;
+  --success-color: #4caf50;
+}
+
+.checkout-section {
+  padding: 2rem 0;
+}
+
+.checkout-section h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.order-summary,
+.customer-details {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.order-summary h2,
+.customer-details h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-items {
+  margin-bottom: 1.5rem;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.checkout-item:last-child {
+  border-bottom: none;
+}
+
+.checkout-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-details h4 {
+  margin: 0 0 0.3rem 0;
+  color: var(--text-color);
+}
+
+.item-details p {
+  margin: 0;
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+}
+
+.item-price {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.item-quantity {
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+}
+
+.order-totals {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--medium-gray);
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.total-row.grand-total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--medium-gray);
+  color: var(--primary-color);
+}
+
+.secure-checkout {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--success-color);
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Customer Details Form */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#address {
+  resize: none;
+  overflow-y: auto;
+}
+
+/* Payment Methods */
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-option {
+  padding: 0.8rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.payment-option i {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.payment-option.active {
+  border-color: var(--primary-color);
+  background-color: var(--primary-lighter);
+}
+
+.payment-option.active i {
+  color: var(--primary-color);
+}
+
+.payment-details {
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.payment-details.active {
+  display: block;
+}
+
+/* Touch 'n Go eWallet Styles */
+#tngDetails {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.tng-instructions {
+  margin-bottom: 1.5rem;
+}
+
+.tng-instructions p {
+  margin-bottom: 1rem;
+  color: var(--dark-gray);
+}
+
+.tng-qr-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin: 0 auto 1.5rem;
+  max-width: 300px;
+}
+
+.tng-qr-code {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border: 1px solid var(--medium-gray);
+  padding: 10px;
+}
+
+.tng-amount {
+  background: var(--primary-lighter);
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+.tng-amount span:first-child {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-color);
+}
+
+.tng-note {
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.tng-note i {
+  color: var(--primary-color);
+}
+
+/* Terms Checkbox */
+.terms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.terms input {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.terms label {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.terms a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Place Order Button */
+#placeOrderBtn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#placeOrderBtn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

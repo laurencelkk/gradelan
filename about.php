@@ -49,7 +49,7 @@ include 'head.php';
     <div class="team-members">
       <div class="team-member">
         <img src="img/laurencelkk.png" alt="Laurence Loo Ka Keong">
-        <h4>Ts. Laurence Loo Ka Keong</h4>
+        <h4>Laurence Loo Ka Keong</h4>
         <p>Founder & CEO</p>
       </div>
 
