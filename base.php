@@ -1,7 +1,7 @@
 <?php
-$servername = "gradelandb.cn2fakugthwj.us-east-1.rds.amazonaws.com"; //localhost
-$username = "gradelan"; //root
-$password = "gradelanaws123";
+$servername = "localhost"; //gradelandb.cn2fakugthwj.us-east-1.rds.amazonaws.com
+$username = "root"; //gradelan
+$password = ""; //gradelanaws123
 $database = "gradelandb";
 
 // Create connection

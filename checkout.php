@@ -185,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fullName'])) {
 
                 <div class="form-group terms">
                     <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                    <label for="terms">I agree to the <a href="tos.php">Terms & Conditions</a> and <a href="privacy.php">Privacy Policy</a></label>
                 </div>
 
                 <button type="submit" class="btn-primary" id="placeOrderBtn">

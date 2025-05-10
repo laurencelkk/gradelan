@@ -343,6 +343,8 @@ $stmt->close();
 </div>
 
 <script>
+    const products = <?= json_encode($products); ?>;
+    
     let isEditing = false;
 
     function editProduct(prodID) {

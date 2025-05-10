@@ -1,7 +1,6 @@
 <?php
 $pageTitle = "About Gradelan - Your Premier Graduation Products Provider";
 $stylecss = "css/about.css";
-
 include 'head.php';
 ?>
 

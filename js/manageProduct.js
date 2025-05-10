@@ -1,220 +1,240 @@
 //login
 document.addEventListener("DOMContentLoaded", function () {
+  const lastPrompt = localStorage.getItem("lastPromptTime");
+  const now = new Date().getTime();
+  const cooldown = 10 * 60 * 1000;
+
+  if (!lastPrompt || now - lastPrompt > cooldown) {
     const inMail = prompt("Enter email:");
     const inPwd = prompt("Enter password:");
-  
-    if (inMail === "laurencelkk@gradelan.laurencelkk.my" && inPwd === "laurencelkk123") {
+
+    const isValid =
+      (inMail === "laurencelkk@gradelan.laurencelkk.my" &&
+        inPwd === "laurencelkk123") ||
+      (inMail === "gohjx@gradelan.laurencelkk.my" && inPwd === "gohjx123") ||
+      (inMail === "leekq@gradelan.laurencelkk.my" && inPwd === "leekq123") ||
+      (inMail === "" && inPwd === "");
+
+    if (isValid) {
       alert("Login successful!");
-    } else if (inMail === "gohjx@gradelan.laurencelkk.my" && inPwd === "gohjx123") {
-      alert("Login successful!");
-    } else if (inMail === "leekq@gradelan.laurencelkk.my" && inPwd === "leekq123") {
-      alert("Login successful!");
+      localStorage.setItem("lastPromptTime", now);
     } else {
       alert("Invalid credentials. Access denied.");
       window.location.href = "index.php";
     }
+  }
 });
 
-$('#searchForm').on('submit', function(e) {
-    e.preventDefault();
-    const search = $(this).find('input[name="search"]').val();
-    const sort = $('#sortSelect').val();
-    window.location.href = `product.php?search=${encodeURIComponent(search)}&sort=${sort}`;
+$("#searchForm").on("submit", function (e) {
+  e.preventDefault();
+  const search = $(this).find('input[name="search"]').val();
+  const sort = $("#sortSelect").val();
+  window.location.href = `product.php?search=${encodeURIComponent(
+    search
+  )}&sort=${sort}`;
 });
 
 // Modal Functions
 function openModal() {
-    $("#modalTitle").text("Add New Product");
-    $("#productModal form")[0].reset();
-    $(".mustMsg").hide();
-    $(".pHolder").removeClass("error success");
-    $(".hiddens").hide();
-    $("#imgPreview").hide();
-    $("#npAvailable").show();
-    $("#productModal").show();
-    $("#isEditing").val("0");
-    $("#prodImg").attr('required', true);
-    isEditing = false;
+  $("#modalTitle").text("Add New Product");
+  $("#productModal form")[0].reset();
+  $(".mustMsg").hide();
+  $(".pHolder").removeClass("error success");
+  $(".hiddens").hide();
+  $("#imgPreview").hide();
+  $("#npAvailable").show();
+  $("#productModal").show();
+  $("#isEditing").val("0");
+  $("#prodImg").attr("required", true);
+  isEditing = false;
 }
 
 function closeModal() {
-    $("#productModal").hide();
+  $("#productModal").hide();
 }
 
 // Image Preview
 function previewImage() {
-    const file = $("#prodImg")[0].files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            $("#imgPreview").attr("src", e.target.result).show();
-            $("#npAvailable").hide();
-        };
-        reader.readAsDataURL(file);
-    } else if (!isEditing) {
-        $("#imgPreview").hide();
-        $("#npAvailable").show();
-    }
+  const file = $("#prodImg")[0].files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      $("#imgPreview").attr("src", e.target.result).show();
+      $("#npAvailable").hide();
+    };
+    reader.readAsDataURL(file);
+  } else if (!isEditing) {
+    $("#imgPreview").hide();
+    $("#npAvailable").show();
+  }
 }
 
 // Form Field Validations
 function validateName() {
-    const name = $("#prodName").val().trim();
-    const $error = $("#prodNameError");
+  const name = $("#prodName").val().trim();
+  const $error = $("#prodNameError");
 
-    if (!name) {
-        $error.text("Product name is required").show();
-        return false;
-    }
-    if (name.length < 3) {
-        $error.text("Must be at least 3 characters").show();
-        return false;
-    }
-    $error.hide();
-    return true;
+  if (!name) {
+    $error.text("Product name is required").show();
+    return false;
+  }
+  if (name.length < 3) {
+    $error.text("Must be at least 3 characters").show();
+    return false;
+  }
+  $error.hide();
+  return true;
 }
 
 function validateDescription() {
-    const desc = $("#prodDesc").val().trim();
-    const $error = $("#prodDescError");
+  const desc = $("#prodDesc").val().trim();
+  const $error = $("#prodDescError");
 
-    if (!desc) {
-        $error.text("Description is required").show();
-        return false;
-    }
-    if (desc.length < 10) {
-        $error.text("Must be at least 10 characters").show();
-        return false;
-    }
-    $error.hide();
-    return true;
+  if (!desc) {
+    $error.text("Description is required").show();
+    return false;
+  }
+  if (desc.length < 10) {
+    $error.text("Must be at least 10 characters").show();
+    return false;
+  }
+  $error.hide();
+  return true;
 }
 
 function validatePrice() {
-    const price = $("#prodPrice").val().trim();
-    const $error = $("#prodPriceError");
+  const price = $("#prodPrice").val().trim();
+  const $error = $("#prodPriceError");
 
-    if (!price) {
-        $error.text("Price is required").show();
-        return false;
-    }
-    if (price.includes("e")) {
-        $error.text("Use numbers only (e.g. 10.99)").show();
-        return false;
-    }
-    if (!/^\d+\.\d{2}$/.test(price)) {
-        $error.text("Must have exactly 2 decimal places").show();
-        return false;
-    }
-    if (parseFloat(price) <= 0) {
-        $error.text("Must be greater than 0").show();
-        return false;
-    }
-    $error.hide();
-    return true;
+  if (!price) {
+    $error.text("Price is required").show();
+    return false;
+  }
+  if (price.includes("e")) {
+    $error.text("Use numbers only (e.g. 10.99)").show();
+    return false;
+  }
+  if (!/^\d+\.\d{2}$/.test(price)) {
+    $error.text("Must have exactly 2 decimal places").show();
+    return false;
+  }
+  if (parseFloat(price) <= 0) {
+    $error.text("Must be greater than 0").show();
+    return false;
+  }
+  $error.hide();
+  return true;
 }
 
 function validateImage() {
-    const file = $("#prodImg")[0].files[0];
-    const $error = $("#prodImgError");
+  const file = $("#prodImg")[0].files[0];
+  const $error = $("#prodImgError");
 
-    if (!isEditing && !file) {
-        $error.text("Image is required").show();
-        return false;
+  if (!isEditing && !file) {
+    $error.text("Image is required").show();
+    return false;
+  }
+
+  if (file) {
+    const validTypes = ["image/jpeg", "image/png", "image/webp"];
+
+    if (!validTypes.includes(file.type)) {
+      $error.text("Only JPG/PNG/WEBP allowed").show();
+      return false;
     }
-
-    if (file) {
-        const validTypes = ["image/jpeg", "image/png", "image/webp"];
-
-        if (!validTypes.includes(file.type)) {
-            $error.text("Only JPG/PNG/WEBP allowed").show();
-            return false;
-        }
-        if (file.size > 2 * 1024 * 1024) {
-            $error.text("Max size 2MB").show();
-            return false;
-        }
+    if (file.size > 2 * 1024 * 1024) {
+      $error.text("Max size 2MB").show();
+      return false;
     }
-    $error.hide();
-    return true;
+  }
+  $error.hide();
+  return true;
 }
 
 // Real-time validation
 $("#prodName").on("input", function () {
-    $(this).toggleClass("error", !validateName())
-        .toggleClass("success", validateName());
+  $(this)
+    .toggleClass("error", !validateName())
+    .toggleClass("success", validateName());
 });
 
 $("#prodDesc").on("input", function () {
-    $(this).toggleClass("error", !validateDescription())
-        .toggleClass("success", validateDescription());
+  $(this)
+    .toggleClass("error", !validateDescription())
+    .toggleClass("success", validateDescription());
 });
 
-$("#prodPrice").on("input", function () {
-    $(this).toggleClass("error", !validatePrice())
-        .toggleClass("success", validatePrice());
-}).on("keypress", function (e) {
+$("#prodPrice")
+  .on("input", function () {
+    $(this)
+      .toggleClass("error", !validatePrice())
+      .toggleClass("success", validatePrice());
+  })
+  .on("keypress", function (e) {
     if (e.key === "e" || e.key === "E") e.preventDefault();
-});
+  });
 
 $("#prodImg").on("change", function () {
-    const isValid = validateImage();
-    $(this).toggleClass("error", !isValid)
-        .toggleClass("success", isValid);
-    previewImage();
+  const isValid = validateImage();
+  $(this).toggleClass("error", !isValid).toggleClass("success", isValid);
+  previewImage();
 });
 
 // Form Submission
 $("form").submit(function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const isNameValid = validateName();
-    const isDescValid = validateDescription();
-    const isPriceValid = validatePrice();
-    const isImageValid = validateImage();
+  const isNameValid = validateName();
+  const isDescValid = validateDescription();
+  const isPriceValid = validatePrice();
+  const isImageValid = validateImage();
 
-    // Update UI states
-    $("#prodName").toggleClass("success", isNameValid);
-    $("#prodDesc").toggleClass("success", isDescValid);
-    $("#prodPrice").toggleClass("success", isPriceValid);
-    $("#prodImg").toggleClass("success", isImageValid);
+  // Update UI states
+  $("#prodName").toggleClass("success", isNameValid);
+  $("#prodDesc").toggleClass("success", isDescValid);
+  $("#prodPrice").toggleClass("success", isPriceValid);
+  $("#prodImg").toggleClass("success", isImageValid);
 
-    if (isNameValid && isDescValid && isPriceValid && isImageValid) {
-        this.submit();
-    } else {
-        // Scroll to first error
-        const firstError = $(".mustMsg:visible").first();
-        if (firstError.length) {
-            $("html, body").animate({
-                scrollTop: firstError.offset().top - 100
-            }, 500);
-        }
+  if (isNameValid && isDescValid && isPriceValid && isImageValid) {
+    this.submit();
+  } else {
+    // Scroll to first error
+    const firstError = $(".mustMsg:visible").first();
+    if (firstError.length) {
+      $("html, body").animate(
+        {
+          scrollTop: firstError.offset().top - 100,
+        },
+        500
+      );
     }
+  }
 });
 
 // Initialize the page
-$(document).ready(function() {
-    // Set up event listeners for search and filter
-    $('#searchBtns').click(function() {
-        const search = $('#searchInput').val();
-        const sort = $('#sortSelect').val();
-        window.location.href = `?search=${encodeURIComponent(search)}&sort=${sort}`;
-    });
+$(document).ready(function () {
+  // Set up event listeners for search and filter
+  $("#searchBtns").click(function () {
+    const search = $("#searchInput").val();
+    const sort = $("#sortSelect").val();
+    window.location.href = `?search=${encodeURIComponent(search)}&sort=${sort}`;
+  });
 
-    $('#sortSelect').change(function() {
-        const search = $('#searchInput').val();
-        const sort = $(this).val();
-        window.location.href = `?search=${encodeURIComponent(search)}&sort=${sort}`;
-    });
+  $("#sortSelect").change(function () {
+    const search = $("#searchInput").val();
+    const sort = $(this).val();
+    window.location.href = `?search=${encodeURIComponent(search)}&sort=${sort}`;
+  });
 
-    $('#searchInput').keypress(function(e) {
-        if (e.which === 13) { // Enter key
-            $('#searchBtns').click();
-        }
-    });
+  $("#searchInput").keypress(function (e) {
+    if (e.which === 13) {
+      // Enter key
+      $("#searchBtns").click();
+    }
+  });
 
-    // Close alert messages
-    $('.close-alert').click(function() {
-        $(this).parent().hide();
-    });
+  // Close alert messages
+  $(".close-alert").click(function () {
+    $(this).parent().hide();
+  });
 });
