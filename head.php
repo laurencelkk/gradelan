@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['newsMail'])) {
     <header>
         <div class="container nav-container">
             <a href="/" target="_self" class="logo-area">
-                <img src="logo.gif" alt="GradÉlan Logo" class="logo" />
+                <img src="logo.gif" alt="GradÉlan Logo" class="logo" loading="eager" />
                 <h1>GradÉlan</h1>
             </a>
 
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['newsMail'])) {
                     <a href="product.php">Products</a>
                     <a href="about.php">About</a>
                     <a href="contact.php">Contact</a>
-                    <a href="manageproduct.php">Manage Product</a>
+                    <a href="manageProduct.php">Manage Product</a>
                 </nav>
                 <div class="cart-icon" id="cartIcon">
                     <i class="fas fa-shopping-cart icon"></i>

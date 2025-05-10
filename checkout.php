@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Checkout | GradÉlan";
 $stylecss = "css/checkout.css";
+$script = "src='js/checkout.js'";
 include 'head.php';
 
 require 'vendor/autoload.php';
@@ -115,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fullName'])) {
 
         <!-- Right Column - Customer & Payment -->
         <div class="customer-details">
-            <form id="checkoutForm" method="POST">
+            <form id="checkoutForm" method="post" enctype="application/x-www-form-urlencoded" novalidate>
                 <h2><i class="fas fa-user"></i> Customer Information</h2>
 
                 <div class="form-group">
@@ -173,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fullName'])) {
                     <div class="tng-instructions">
                         <p>Scan the QR code below using your Touch 'n Go eWallet app to complete payment:</p>
                         <div class="tng-qr-container">
-                            <img src="img/tng-qr.png" alt="Touch 'n Go eWallet QR Code" class="tng-qr-code">
+                            <img src="img/tng-qr.png" alt="Touch 'n Go eWallet QR Code" class="tng-qr-code" loading="lazy">
                             <div class="tng-amount">
                                 <span>Amount to pay:</span>
                                 <span id="tngAmount">RM0.00</span>
@@ -195,7 +196,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fullName'])) {
         </div>
     </div>
 </section>
-
-<script src="js/checkout.js"></script>
 
 <?php include 'foot.php'; ?>

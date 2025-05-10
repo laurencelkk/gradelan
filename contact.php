@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name'])) {
         <h2>Send Us a Message</h2>
         <p>Have questions about our products or need assistance with your order? Fill out the form below and we'll get back to you within 24 hours.</p>
 
-        <form class="gradelan-form" method="post" enctype="application/x-www-form-urlencoded" novalidate autocomplete="off">
+        <form class="gradelan-form" method="post" enctype="application/x-www-form-urlencoded" novalidate>
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name'])) {
 
           <div class="form-group">
             <label for="subject">Subject</label>
-            <select id="subject" name="subject">
+            <select id="subject" name="subject" required> 
               <option value="">Select a subject</option>
               <option value="product">Product Inquiry</option>
               <option value="order">Order Status</option>

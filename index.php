@@ -36,7 +36,7 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
       <div class="product-card productCard" data-id="<?= $product['prodID'] ?>">
         <div class="product-badge">NEW</div>
         <div class="product-image">
-          <img src="img/products/<?php echo htmlspecialchars($product['prodImg']); ?>" alt="<?php echo htmlspecialchars($product['prodName']); ?>" class="productImg" />
+          <img src="img/products/<?php echo htmlspecialchars($product['prodImg']); ?>" alt="<?php echo htmlspecialchars($product['prodName']); ?>" class="productImg" loading="eager"/>
           <div class="quick-view-overlay">
             <button class="btn-quickview" onclick="location.href='productDetails.php?prodID=<?php echo $product['prodID']; ?>'">
               <i class="fas fa-eye"></i> Quick View
@@ -62,7 +62,7 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <div class="container">
     <div class="value-grid">
       <div class="value-image">
-        <img src="img/graduationcelebration.png" alt="Happy graduates celebrating">
+        <img src="img/graduationcelebration.png" alt="Happy graduates celebrating" loading="lazy">
       </div>
       <div class="value-content">
         <h2>More Than Just Graduation Attire</h2>

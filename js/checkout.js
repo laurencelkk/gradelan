@@ -187,10 +187,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     phoneInput.addEventListener("input", function () {
       // Keep +60 and only allow digits and hyphen afterward
-      let value = phoneInput.value.replace(/[^\d\-]/g, "");
+      let value = phoneInput.value.replace(/[^\d]/g, "");
 
       if (!value.startsWith("60")) {
         value = "60" + value.replace(/^60*/, "");
+      }
+
+      if (value.length > 4) {
+        value = value.slice(0, 4) + "-" + value.slice(4, 12);
+      }
+
+      if (value.length > 13) {
+        value = value.slice(0, 14);
       }
 
       phoneInput.value = "+" + value;
@@ -209,20 +217,6 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Your cart is empty!");
         return;
       }
-
-      const form = e.target;
-
-      const cartInput = document.createElement("input");
-      cartInput.type = "hidden";
-      cartInput.name = "cart";
-      cartInput.value = JSON.stringify(cart);
-      form.appendChild(cartInput);
-
-      const paymentInput = document.createElement("input");
-      paymentInput.type = "hidden";
-      paymentInput.name = "paymentMethod";
-      paymentInput.value = getSelectedPaymentMethod();
-      form.appendChild(paymentInput);
 
       const fullName = document.getElementById("fullName").value.trim();
       const email = document.getElementById("email").value.trim();
@@ -256,6 +250,20 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         return;
       }
+
+      const form = e.target;
+
+      const cartInput = document.createElement("input");
+      cartInput.type = "hidden";
+      cartInput.name = "cart";
+      cartInput.value = JSON.stringify(cart);
+      form.appendChild(cartInput);
+
+      const paymentInput = document.createElement("input");
+      paymentInput.type = "hidden";
+      paymentInput.name = "paymentMethod";
+      paymentInput.value = getSelectedPaymentMethod();
+      form.appendChild(paymentInput);
 
       const activePayment = document.querySelector(".payment-option.active");
       const paymentMethod = activePayment ? activePayment.dataset.method : null;

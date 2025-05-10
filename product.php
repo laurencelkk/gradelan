@@ -108,7 +108,7 @@ $countStmt->close();
                     <div class="productCard" data-id="<?= $product['prodID']; ?>">
                         <div class="productImgContainer">
                             <img src="img/products/<?= htmlspecialchars($product['prodImg']); ?>"
-                                alt="<?= htmlspecialchars($product['prodName']); ?>" class="productImg">
+                                alt="<?= htmlspecialchars($product['prodName']); ?>" class="productImg" loading="eager">
                             <div class="productOverlay">
                                 <button class="quickViewBtn" onclick="location.href='productDetails.php?prodID=<?= $product['prodID']; ?>'">
                                     Quick View

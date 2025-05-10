@@ -31,7 +31,7 @@
             <div class="footer-newsletter">
                 <h4>Stay Connected</h4>
                 <p>Subscribe for exclusive offers and graduation tips</p>
-                <form class="newsletter-form" method="post" enctype="application/x-www-form-urlencoded" novalidate autocomplete="off">
+                <form class="newsletter-form" method="post" enctype="application/x-www-form-urlencoded" novalidate>
                     <input type="email" placeholder="Your email address" id="newsMail" name="newsMail" required>
                     <button type="submit" class="newsBtn"><i class="fas fa-paper-plane"></i></button>
                 </form>

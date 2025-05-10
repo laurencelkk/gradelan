@@ -40,7 +40,7 @@ $relatedStmt->close();
             <div class="productGallery">
                 <div class="mainImage">
                     <img class="productImg" src="img/products/<?= htmlspecialchars($product['prodImg']); ?>"
-                        alt="<?= htmlspecialchars($product['prodName']); ?>">
+                        alt="<?= htmlspecialchars($product['prodName']); ?>" loading="eager">
                 </div>
             </div>
 
@@ -86,7 +86,7 @@ $relatedStmt->close();
                 <a href="productDetails.php?prodID=<?= htmlspecialchars($related['prodID']); ?>">
                     <div class="productImage">
                         <img src="img/products/<?= htmlspecialchars($related['prodImg']); ?>"
-                            alt="<?= htmlspecialchars($related['prodName']); ?>">
+                            alt="<?= htmlspecialchars($related['prodName']); ?>" loading="lazy">
                     </div>
                     <h3><?= htmlspecialchars($related['prodName']); ?></h3>
                     <p class="productPrice">RM<?= number_format($related['prodPrice'], 2); ?></p>
