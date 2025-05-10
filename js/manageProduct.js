@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       (inMail === "laurencelkk@gradelan.laurencelkk.my" &&
         inPwd === "laurencelkk123") ||
       (inMail === "gohjx@gradelan.laurencelkk.my" && inPwd === "gohjx123") ||
-      (inMail === "leekq@gradelan.laurencelkk.my" && inPwd === "leekq123") ||
-      (inMail === "" && inPwd === "");
+      (inMail === "leekq@gradelan.laurencelkk.my" && inPwd === "leekq123");
 
     if (isValid) {
       alert("Login successful!");
