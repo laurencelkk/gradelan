@@ -344,8 +344,7 @@ $stmt->close();
 
 <script>
     const products = <?= json_encode($products); ?>;
-    const currentPage = <?= $currentPage; ?>;
-    
+
     let isEditing = false;
 
     function editProduct(prodID) {
@@ -364,12 +363,6 @@ $stmt->close();
             $("#prodImg").val('').removeAttr('required');
             $("#prodName, #prodDesc, #prodPrice").addClass("success");
             $("#productModal").show();
-        }
-    }
-
-    function deleteProduct(prodID, productName) {
-        if (confirm(`Delete "${productName}"?`)) {
-            window.location.href = `?delete=${prodID}&page=${currentPage}&search=${encodeURIComponent(currentSearch)}&sort=${currentSort}`;
         }
     }
 </script>

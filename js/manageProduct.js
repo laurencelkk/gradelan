@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+//Search
 $("#searchForm").on("submit", function (e) {
   e.preventDefault();
   const search = $(this).find('input[name="search"]').val();
@@ -50,6 +51,13 @@ function openModal() {
 
 function closeModal() {
   $("#productModal").hide();
+}
+
+// Delete Product
+function deleteProduct(prodID, productName) {
+  if (confirm(`Delete "${productName}"?`)) {
+    window.location.href = `?delete=${prodID}`;
+  }
 }
 
 // Image Preview
