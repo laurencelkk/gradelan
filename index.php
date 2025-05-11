@@ -62,7 +62,7 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <div class="container">
     <div class="value-grid">
       <div class="value-image">
-        <img src="img/graduationcelebration.png" alt="Happy graduates celebrating" loading="lazy">
+        <img src="https://gradelanstatic.s3.us-east-1.amazonaws.com/img/graduationcelebration.png" alt="Happy graduates celebrating" loading="lazy">
       </div>
       <div class="value-content">
         <h2>More Than Just Graduation Attire</h2>

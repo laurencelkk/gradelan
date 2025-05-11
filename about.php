@@ -47,19 +47,19 @@ include 'head.php';
     <h2 class="section-title">Meet Our Leadership</h2>
     <div class="team-members">
       <div class="team-member">
-        <img src="img/laurencelkk.png" alt="Laurence Loo Ka Keong" loading="lazy">
+        <img src="https://gradelanstatic.s3.us-east-1.amazonaws.com/img/laurencelkk.png" alt="Laurence Loo Ka Keong" loading="lazy">
         <h4>Laurence Loo Ka Keong</h4>
         <p>Founder & CEO</p>
       </div>
 
       <div class="team-member">
-        <img src="img/gohjx.png" alt="Goh Jian Xin" loading="lazy">
+        <img src="https://gradelanstatic.s3.us-east-1.amazonaws.com/img/gohjx.png" alt="Goh Jian Xin" loading="lazy">
         <h4>Goh Jian Xin</h4>
         <p>Co-Founder & CTO</p>
       </div>
 
       <div class="team-member">
-        <img src="img/leekq.png" alt="Lee Kai Quan" loading="lazy">
+        <img src="https://gradelanstatic.s3.us-east-1.amazonaws.com/img/leekq.png" alt="Lee Kai Quan" loading="lazy">
         <h4>Lee Kai Quan</h4>
         <p>Co-Founder & COO</p>
       </div>

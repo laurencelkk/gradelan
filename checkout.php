@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fullName'])) {
                     <div class="tng-instructions">
                         <p>Scan the QR code below using your Touch 'n Go eWallet app to complete payment:</p>
                         <div class="tng-qr-container">
-                            <img src="img/tng-qr.png" alt="Touch 'n Go eWallet QR Code" class="tng-qr-code" loading="lazy">
+                            <img src="https://gradelanstatic.s3.us-east-1.amazonaws.com/img/tng-qr.png" alt="Touch 'n Go eWallet QR Code" class="tng-qr-code" loading="lazy">
                             <div class="tng-amount">
                                 <span>Amount to pay:</span>
                                 <span id="tngAmount">RM0.00</span>

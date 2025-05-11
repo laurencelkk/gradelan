@@ -61,16 +61,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['newsMail'])) {
     <script src="js/foot.js" defer></script>
     <script src="https://kit.fontawesome.com/cf66887dbc.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="icon" href="https://gradelanstatic.s3.us-east-1.amazonaws.com/img/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://gradelanstatic.s3.us-east-1.amazonaws.com">
 </head>
 
 <body>
     <header>
         <div class="container nav-container">
             <a href="/" target="_self" class="logo-area">
-                <img src="logo.gif" alt="GradÉlan Logo" class="logo" loading="eager" />
+                <img src="https://gradelanstatic.s3.us-east-1.amazonaws.com/img/logo.gif" alt="GradÉlan Logo" class="logo" loading="eager" />
                 <h1>GradÉlan</h1>
             </a>
 
