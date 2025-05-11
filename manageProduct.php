@@ -344,6 +344,7 @@ $stmt->close();
 
 <script>
     const products = <?= json_encode($products); ?>;
+    const currentPage = <?= $currentPage; ?>;
     
     let isEditing = false;
 
